@@ -1,19 +1,29 @@
-# Express.js on Netlify Example
+Express & Nunjucks Boilerplate
+===
 
-[![Deploy to
-Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/neverendingqs/netlify-express)
+Express and Nunjucks.  Pow!
 
-An example of how to host an Express.js app on Netlify using
-[serverless-http](https://github.com/dougmoscrop/serverless-http). See
-[express/server.js](express/server.js) for details, or check it out at
-https://netlify-express.netlify.com/!
+1. Installation
+---
 
-[index.html](index.html) simply loads html from the Express.js app using `<object>`, and the
-app is hosted at `/.netlify/functions/server`. Examples of how to access the
-Express.js endpoints:
-
-```sh
-curl https://netlify-express.netlify.com/.netlify/functions/server
-curl https://netlify-express.netlify.com/.netlify/functions/server/another
-curl --header "Content-Type: application/json" --request POST --data '{"json":"POST"}' https://netlify-express.netlify.com/.netlify/functions/server
 ```
+clone repository
+npm install
+node app.js
+```
+
+...then you should see this if you go to: `http://localhost:3000`
+
+<img src="http://i.imgur.com/cHUoULb.png?1" style="border: solid #eee 1px">
+
+2. Template structure
+---
+
+```
+/
+--- views/
+------- layout.html  (the main layout template)
+------- index.html   (extends layout.html and inserts content using {% block body %})
+------- example.html (extends index.html and adds to {% block content %})
+```
+
